@@ -6,8 +6,7 @@ var mongoose = require('mongoose');
 
 var router = express.Router();
 
-
-mongoose.connect('localhost:27017/iymw');
+mongoose.connect(process.env.MONGOHQ_URL);
 var tallySchema = mongoose.Schema({
     ts: Date,
     observation: String
