@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.tallyForm {
+	display: inline;
+	margin: 5px;
+}

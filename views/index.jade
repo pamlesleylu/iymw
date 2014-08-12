@@ -1,29 +1,18 @@
 extends layout
 
-block extracss
-  link(rel='stylesheet', href='/stylesheets/jumbotron.css')
-
 block content
-  div.container
-    div.header
-      ul(class="nav nav-pills pull-right")
-        li.active
-          a(href="#") Home
-        li
-          a(href="#") Tally
-      h3.text-muted IYMW
-    div.jumbotron
-      h2 Is He Working?
-      p.lead
-        p
-          a(class="btn btn-lg btn-success", href="/tally/yes", role="button")            
+  div.jumbotron
+    h2 Trabajo?
+    p= currentDate
+    p.lead
+      p
+        form(id="frmYes", method="POST", action="/tally/yes", class="tallyForm")
+          button(class="btn btn-lg btn-success")
             span(class="glyphicon glyphicon-thumbs-up")
             | &nbsp; Yes &nbsp;
             span.badge= yesTally
-          | &nbsp;
-          a(class="btn btn-lg btn-danger", href="/tally/no", role="button")
+        form(id="frmNo", method="POST", action="/tally/no", class="tallyForm")
+          button(class="btn btn-lg btn-danger")
             span(class="glyphicon glyphicon-thumbs-down")
             | &nbsp; No &nbsp;
             span.badge= noTally
-  div.footer
-    p &copy; 2014

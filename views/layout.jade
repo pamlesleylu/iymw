@@ -1,9 +1,10 @@
 doctype html
 html
   head
-    title= title
+    title La Zyman
     link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/jumbotron.css')
 
     block extracss
 
@@ -13,6 +14,22 @@ html
     |  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     | <![endif]-->
   body
-    block content
-      script(src='http://code.jquery.com/jquery.js')
-      script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+    div.container
+      div.header
+        ul(class="nav nav-pills pull-right")
+          li(class=pageName=="home"?"active":"")
+            a(href="/tally") Home
+          li(class=pageName=="tally"?"active":"")
+            a(href="/tally/summary") Tally
+        h3.text-muted La Zyman
+  
+      block content
+
+      div.footer
+        p &copy; 2014
+
+
+    script(src='http://code.jquery.com/jquery.js')
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+
+    block extrajs
