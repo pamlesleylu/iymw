@@ -18,9 +18,11 @@ router.get('/', function(req, res) {
   var yesCount, noCount, dtQuery;
 
   dtQuery = {
-    '$gte': moment().startOf('hour'),
-    '$lte': moment().endOf('hour')
+    '$gte': moment().startOf('day'),
+    '$lte': moment().endOf('day')
   };
+
+  console.log(dtQuery);
 
   Tally.count({ observation: 'Y', ts: dtQuery }, function(err, count){
     yesCount = count;
